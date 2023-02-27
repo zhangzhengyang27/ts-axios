@@ -61,14 +61,14 @@ axios({
   }
 })
 
-/*
+
 axios({
   method: 'post',
   url: '/base/post',
-  headers: {
-    'content-type': 'application/json',
-    "Accept": 'application/json; text/plain,*!/!*'
-  },
+  // headers: {
+  //   'content-type': 'application/json',
+  //   'Accept': 'application/json; text/plain,*!/!*'
+  // },
   data: {
     a: 1,
     b: 2
@@ -82,6 +82,9 @@ axios({
   url: '/base/buffer',
   data: arr
 })
+
+/*
+
 
 axios({
   method: 'post',
