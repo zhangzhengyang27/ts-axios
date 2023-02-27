@@ -83,9 +83,6 @@ axios({
   data: arr
 })
 
-/*
-
-
 axios({
   method: 'post',
   url: '/base/post',
@@ -98,7 +95,6 @@ axios({
   }
 })
 
-
 const paramsString = 'q=URLUtils.searchParams&topic=api'
 const searchParams = new URLSearchParams(paramsString)
 
@@ -108,6 +104,7 @@ axios({
   data: searchParams
 })
 
+/*
 axios({
   method: 'post',
   url: '/base/post',
