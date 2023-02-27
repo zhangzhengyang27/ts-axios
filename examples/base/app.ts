@@ -104,7 +104,6 @@ axios({
   data: searchParams
 })
 
-/*
 axios({
   method: 'post',
   url: '/base/post',
@@ -128,4 +127,3 @@ axios({
 }).then((res) => {
   console.log(res)
 })
-*/
