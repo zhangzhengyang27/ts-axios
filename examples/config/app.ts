@@ -38,9 +38,6 @@ axios({
   console.log(res.data)
 })
 
-/*
-
-
 const instance = axios.create({
   transformRequest: [(function(data) {
     return qs.stringify(data)
@@ -62,4 +59,3 @@ instance({
 }).then((res) => {
   console.log(res.data)
 })
-*/
