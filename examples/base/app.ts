@@ -1,6 +1,6 @@
 import axios from '../../src'
 
-axios({
+/*axios({
   method: 'get',
   url: '/base/get',
   params: {
@@ -59,16 +59,16 @@ axios({
   params: {
     bar: 'baz'
   }
-})
+})*/
 
 
 axios({
   method: 'post',
   url: '/base/post',
-  // headers: {
-  //   'content-type': 'application/json',
-  //   'Accept': 'application/json; text/plain,*!/!*'
-  // },
+  headers: {
+    'content-type': 'application/json',
+    'Accept': 'application/json; text/plain,*!/!*'
+  },
   data: {
     a: 1,
     b: 2
@@ -89,6 +89,7 @@ axios({
   headers: {
     'content-type': 'application/json;charset=utf-8'
   },
+  // responseType: 'json',
   data: {
     a: 1,
     b: 2
@@ -101,12 +102,14 @@ const searchParams = new URLSearchParams(paramsString)
 axios({
   method: 'post',
   url: '/base/post',
+  // responseType: 'json',
   data: searchParams
 })
 
 axios({
   method: 'post',
   url: '/base/post',
+  // responseType: 'json',
   data: {
     a: 1,
     b: 2
@@ -119,7 +122,7 @@ axios({
   method: 'post',
   url: '/base/post',
   // 没有设置responseType: 'json', 返回的数据里面包含\
-  responseType: 'json',
+  // responseType: 'json',
   data: {
     a: 3,
     b: 4
