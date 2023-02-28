@@ -2,16 +2,16 @@ import axios, { AxiosError } from '../../src'
 // @ts-ignore
 import qs from 'qs'
 
-/*import 'nprogress/nprogress.css'
+import 'nprogress/nprogress.css'
 
 // @ts-ignore
-import NProgress from 'nprogress'*/
+import NProgress from 'nprogress'
 
 document.cookie = 'a=b'
 
-axios.get('/more/get').then(res => {
-  console.log(res)
-})
+// axios.get('/more/get').then(res => {
+//   console.log(res)
+// })
 
 axios.post('http://127.0.0.1:8088/more/server2', {}, {
   withCredentials: true
@@ -19,16 +19,17 @@ axios.post('http://127.0.0.1:8088/more/server2', {}, {
   console.log(res)
 })
 
-// const instance = axios.create({
-//   xsrfCookieName: 'XSRF-TOKEN-D',
-//   xsrfHeaderName: 'X-XSRF-TOKEN-D'
-// })
-//
-// instance.get('/more/get').then(res => {
-//   console.log(res)
-// })
-
 /*
+const instance = axios.create({
+  xsrfCookieName: 'XSRF-TOKEN-D',
+  xsrfHeaderName: 'X-XSRF-TOKEN-D'
+})
+
+instance.get('/more/get').then(res => {
+  console.log(res)
+})
+*/
+
 
 const instance = axios.create()
 
@@ -87,6 +88,7 @@ uploadEl!.addEventListener('click', e => {
   }
 })
 
+
 // headers 上面添加  Authorization: Basic WWVlOjEyMzQ1Ng==
 axios.post('/more/post', {
   a: 1
@@ -98,6 +100,10 @@ axios.post('/more/post', {
 }).then(res => {
   console.log(res)
 })
+
+
+/*
+
 
 
 axios.get('/more/304').then(res => {

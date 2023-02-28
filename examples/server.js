@@ -6,6 +6,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const WebpackConfig = require('./webpack.config')
 const router = express.Router()
+const multipart = require('connect-multiparty')
+const path = require('path')
 
 const app = express()
 const compiler = webpack(WebpackConfig)
@@ -16,6 +18,16 @@ app.use(webpackDevMiddleware(compiler, {
   stats: {
     colors: true,
     chunks: false
+  }
+}))
+
+app.use(multipart({
+  uploadDir: path.resolve(__dirname, 'upload-file')
+}))
+
+app.use(express.static(__dirname, {
+  setHeaders(res) {
+    res.cookie('XSRF-TOKEN-D', '1234abc')
   }
 }))
 

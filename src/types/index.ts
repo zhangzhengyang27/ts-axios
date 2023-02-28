@@ -31,6 +31,14 @@ export interface AxiosRequestConfig {
 
   cancelToken?: CancelToken
   withCredentials?: boolean
+
+  xsrfCookieName?: string
+  xsrfHeaderName?: string
+
+  onDownloadProgress?: (e: ProgressEvent) => void
+  onUploadProgress?: (e: ProgressEvent) => void
+
+  auth?: AxiosBasicCredentials
 }
 
 export interface AxiosResponse<T = any> {
@@ -129,6 +137,7 @@ export interface CancelTokenSource {
 
 export interface CancelTokenStatic {
   new (executor: CancelExecutor): CancelToken
+
   source(): CancelTokenSource
 }
 
@@ -146,4 +155,9 @@ export interface AxiosStatic extends AxiosInstance {
   CancelToken: CancelTokenStatic
   Cancel: CancelStatic
   isCancel: (value: any) => boolean
+}
+
+export interface AxiosBasicCredentials {
+  username: string
+  password: string
 }

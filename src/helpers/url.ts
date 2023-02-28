@@ -18,7 +18,7 @@ export function bulidURL(url: string, params?: any) {
 
   const parts: string[] = []
 
-  Object.keys(params).forEach((key) => {
+  Object.keys(params).forEach(key => {
     let val = params[key]
     // forEach 的 return 跳不出循环，只会跳到下一次循环
     if (val === null || typeof val === 'undefined') {
@@ -31,7 +31,7 @@ export function bulidURL(url: string, params?: any) {
     } else {
       values = [val]
     }
-    values.forEach((val) => {
+    values.forEach(val => {
       if (isDate(val)) {
         val = val.toISOString()
       } else if (isPlainObject(val)) {
@@ -54,4 +54,29 @@ export function bulidURL(url: string, params?: any) {
   }
 
   return url
+}
+
+interface URLOrigin {
+  protocol: string
+  host: string
+}
+
+export function isURLSameOrigin(requestURL: string): boolean {
+  const parsedOrigin = resolveURL(requestURL)
+  return (
+    parsedOrigin.protocol === currentOrigin.protocol && parsedOrigin.host === currentOrigin.host
+  )
+}
+
+const urlParsingNode = document.createElement('a')
+const currentOrigin = resolveURL(window.location.href)
+
+function resolveURL(url: string): URLOrigin {
+  urlParsingNode.setAttribute('href', url)
+  const { protocol, host } = urlParsingNode
+
+  return {
+    protocol,
+    host
+  }
 }
