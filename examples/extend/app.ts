@@ -38,8 +38,7 @@ axios.put('/extend/put', { msg: 'put' })
 axios.patch('/extend/patch', { msg: 'patch' })
 
 
-/*
-// 泛型接口 这点没有看懂
+// 泛型接口
 interface ResponseData<T = any> {
   code: number
   result: T
@@ -65,4 +64,3 @@ async function test() {
 }
 
 test()
-*/
