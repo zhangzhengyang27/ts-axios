@@ -1,5 +1,4 @@
-// import axios, { AxiosTransformer } from '../../src'
-import axios from '../../src'
+import axios, { AxiosTransformer } from '../../src'
 // @ts-ignore
 import qs from 'qs'
 
@@ -18,7 +17,6 @@ axios({
   console.log(res.data)
 })
 
-/*
 axios({
   transformRequest: [(function(data) {
     data.c = 'zhangzhengyang'
@@ -39,6 +37,9 @@ axios({
 }).then((res) => {
   console.log(res.data)
 })
+
+/*
+
 
 const instance = axios.create({
   transformRequest: [(function(data) {
