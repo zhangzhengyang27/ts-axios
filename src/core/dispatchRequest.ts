@@ -7,6 +7,7 @@ import transform from './transform'
 
 // @ts-ignore
 function axios(config: AxiosRequestConfig): AxiosPromise {
+  throwIfCancellationRequested(config)
   processConfig(config)
   console.log(config)
   // return xhr(config)
@@ -45,6 +46,12 @@ function transformHeaders(config: AxiosRequestConfig) {
 function transformResponseData(res: AxiosResponse): AxiosResponse {
   res.data = transform(res.data, res.headers, res.config.transformResponse)
   return res
+}
+
+function throwIfCancellationRequested(config: AxiosRequestConfig): void {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested()
+  }
 }
 
 export default axios
