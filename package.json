@@ -127,6 +127,9 @@
     "cookie-parser": "^1.4.4"
   },
   "dependencies": {
-    "qs": "^6.11.0"
+    "css-loader": "^6.7.3",
+    "nprogress": "^0.2.0",
+    "qs": "^6.11.0",
+    "style-loader": "^3.3.1"
   }
 }
