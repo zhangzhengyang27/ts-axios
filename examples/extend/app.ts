@@ -16,12 +16,12 @@ axios.request({
   }
 })
 
-// axios('/extend/post', {
-//   method: 'post',
-//   data: {
-//     msg: 'hello11'
-//   }
-// })
+axios('/extend/post', {
+  method: 'post',
+  data: {
+    msg: 'hello11'
+  }
+})
 
 axios.get('/extend/get')
 
