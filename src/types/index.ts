@@ -1,5 +1,5 @@
 export type Method =
-  'get'
+  | 'get'
   | 'GET'
   | 'delete'
   | 'DELETE'
@@ -21,8 +21,8 @@ export interface AxiosRequestConfig {
   params?: any
   headers?: any
   responseType?: XMLHttpRequestResponseType
+  timeout?: number
 }
-
 
 export interface AxiosResponse {
   data: any
@@ -34,5 +34,12 @@ export interface AxiosResponse {
 }
 
 // axios 函数返回的是一个 Promise 对象，我们可以定义一个 AxiosPromise 接口，它继承于 Promise<AxiosResponse> 这个泛型接口：
-export interface AxiosPromise extends Promise<AxiosResponse> {
+export interface AxiosPromise extends Promise<AxiosResponse> {}
+
+export interface AxiosError extends Error {
+  config: AxiosRequestConfig
+  code?: string
+  request?: any
+  response?: AxiosResponse
+  isAxiosError: boolean
 }
