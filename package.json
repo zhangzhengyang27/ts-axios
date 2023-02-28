@@ -125,5 +125,8 @@
     "express": "^4.16.4",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4"
+  },
+  "dependencies": {
+    "qs": "^6.11.0"
   }
 }
